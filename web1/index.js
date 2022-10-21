@@ -1,7 +1,7 @@
 const Consul = require('consul');
 const express = require('express');
 
-const SERVICE_NAME='web1';
+const SERVICE_NAME='webservice';
 const SERVICE_ID='m'+process.argv[2];
 const SCHEME='http';
 const HOST='192.168.100.5';
