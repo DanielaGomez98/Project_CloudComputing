@@ -1,0 +1,35 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  if Vagrant.has_plugin? "vagrant-vbguest"
+    config.vbguest.no_install  = true
+    config.vbguest.auto_update = false
+    config.vbguest.no_remote   = true
+  end
+
+  config.vm.define :servidor1Ubuntu do |servidor1Ubuntu|
+    servidor1Ubuntu.vm.box = "bento/ubuntu-20.04"
+    servidor1Ubuntu.vm.network :private_network, ip: "192.168.100.5"
+    servidor1Ubuntu.vm.provision "shell", path: "script.sh"
+    servidor1Ubuntu.vm.hostname = "servidor1Ubuntu"
+  end
+
+  config.vm.define :servidor2Ubuntu do |servidor2Ubuntu|
+    servidor2Ubuntu.vm.box = "bento/ubuntu-20.04"
+    servidor2Ubuntu.vm.network :private_network, ip: "192.168.100.6"
+    servidor2Ubuntu.vm.provision "shell", path: "script1.sh"
+    servidor2Ubuntu.vm.hostname = "servidor2Ubuntu"
+  end
+
+  config.vm.define :haproxy1 do |haproxy1|
+    haproxy1.vm.box = "bento/ubuntu-20.04"
+    haproxy1.vm.network :private_network, ip: "192.168.100.7"
+    haproxy1.vm.provision "shell", path: "script2.sh"
+    haproxy1.vm.hostname = "haproxy1"
+  end
+
+  config.vm.synced_folder "/home/daniela-gomez/Documents/Computacion_Nube/microproyecto1", "/vagrant"
+
+end
