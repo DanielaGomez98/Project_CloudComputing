@@ -5,3 +5,5 @@ In this project, three virtual machines are created using Vagrant. The objective
 In addition, load balancing is implemented using HAProxy. Clients send requests to the HAProxy load balancer and get a response from the two web servers. That is, the requests are not made directly to the web servers, but the load balancer decides which server will be in charge of processing the request. This load balancer is implemented in the third Vagrant virtual machine. 
 
 Finally, the Shell provisioner is used to automatically provision the virtual machines running the web servers and the HAProxy.
+
+<img src="https://user-images.githubusercontent.com/91514084/204405337-4e5a4df8-6c8f-40b0-a9bc-300a89daf3bd.png" width="400">
