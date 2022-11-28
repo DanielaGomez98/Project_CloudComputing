@@ -58,5 +58,3 @@ cd ../../..
 cd home/vagrant/
 cd microproyecto1_compuNube/web2
 node index.js 3000 &
-
-#Provisioning second virtual machine.
