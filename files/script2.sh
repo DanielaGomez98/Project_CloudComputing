@@ -24,3 +24,5 @@ sudo cp --force /vagrant/index.css /etc/haproxy/errors
 
 echo "iniciar el servicio de haproxy"
 sudo systemctl restart haproxy
+
+#Provisioning third virtual machine (Load Balancer with HAProxy)
