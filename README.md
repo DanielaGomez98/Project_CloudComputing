@@ -1,4 +1,4 @@
-# Microproyecto 1 - Computación en la nube
+# Microproject - Cloud Computing
 
 In this project, three virtual machines are created using Vagrant. The objective of this project is to implement a service mesh (cluster) with the help of Hashicorp Consul. For this, Consul agents are run on two nodes (two virtual machines), each of which hosts a web application (NodeJS). In this way, a cluster with two nodes will be implemented. 
 
