@@ -58,5 +58,3 @@ cd ../../..
 cd home/vagrant/
 cd microproyecto1_compuNube/web1
 node index.js 3000 &
-
-#Provisioning first virtual machine
