@@ -9,6 +9,7 @@ Vagrant.configure("2") do |config|
     config.vbguest.no_remote   = true
   end
 
+  #Web Servers
   config.vm.define :servidor1Ubuntu do |servidor1Ubuntu|
     servidor1Ubuntu.vm.box = "bento/ubuntu-20.04"
     servidor1Ubuntu.vm.network :private_network, ip: "192.168.100.5"
@@ -23,6 +24,7 @@ Vagrant.configure("2") do |config|
     servidor2Ubuntu.vm.hostname = "servidor2Ubuntu"
   end
 
+  #Load Balancer
   config.vm.define :haproxy1 do |haproxy1|
     haproxy1.vm.box = "bento/ubuntu-20.04"
     haproxy1.vm.network :private_network, ip: "192.168.100.7"
