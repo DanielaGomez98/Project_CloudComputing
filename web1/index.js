@@ -4,11 +4,11 @@ const express = require('express');
 const SERVICE_NAME='webservice';
 const SERVICE_ID='m'+process.argv[2];
 const SCHEME='http';
-const HOST='192.168.100.5';
+const HOST='192.168.100.5';      //Depends on the node IP
 const PORT=process.argv[2]*1;
 const PID = process.pid;
 
-/* Inicializacion del server */
+/* Server Initialization */
 const app = express();
 const consul = new Consul();
 
@@ -23,10 +23,10 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, function () {
-    console.log('Servicio iniciado en:'+SCHEME+'://'+HOST+':'+PORT+'!');
+    console.log('Service started on:'+SCHEME+'://'+HOST+':'+PORT+'!');
     });
 
-/* Registro del servicio */
+/* Service Registration */
 var check = {
   id: SERVICE_ID,
   name: SERVICE_NAME,
